@@ -10,9 +10,25 @@ public static class BookingService
     {
         Bookings = new List<Booking>
         {
-            new Booking { Id = 1, FirstName = "Jane", LastName = "Doe" , Email = "jane.doe@madetech.com", Location = "Hackney Marshes", Date = null,  PaymentReceived = true  },
+            new Booking { 
+                Id = 1, 
+                FirstName = "Jane", 
+                LastName = "Doe" , 
+                Email = "jane.doe@madetech.com", 
+                Location = "Hackney Marshes", 
+                Date = new DateTime(2022, 3, 30, 8, 30, 0), 
+                PaymentReceived = true  
+            },
             
-            new Booking { Id = 2, FirstName = "Joe", LastName = "Doe" , Email = "joe.doe@madetech.com", Location = "Hackney Marshes", Date = null,  PaymentReceived = true  },
+            new Booking { 
+                Id = 2, 
+                FirstName = "Joe", 
+                LastName = "Doe" , 
+                Email = "joe.doe@madetech.com", 
+                Location = "Hackney Marshes", 
+                Date = new DateTime(2022, 3, 30, 10, 30, 0),  
+                PaymentReceived = true  
+            },
         };
     }
 
