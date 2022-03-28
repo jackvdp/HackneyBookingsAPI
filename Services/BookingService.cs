@@ -1,4 +1,4 @@
-using HackneyBookingsAPI.Models;
+using HackneyBookingAPI.Models.Booking;
 
 namespace HackneyBookingsAPI.Services;
 
