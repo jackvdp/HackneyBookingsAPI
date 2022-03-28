@@ -1,2 +1,2 @@
 # HackneyBookingsAPI
-Test booking system for Hackney Council
+Test booking system for Hackney Council.
