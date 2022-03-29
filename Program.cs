@@ -10,7 +10,9 @@ builder.Services.AddCors(options =>
                       {
                           builder.WithOrigins("http://example.com",
                                               "http://www.contoso.com",
-                                              "http://localhost:3000");
+                                              "http://localhost:3000",
+                                              "https://hackney-booking-react.herokuapp.com"
+                                             );
                       });
 });
 
