@@ -29,6 +29,7 @@ namespace HackneyBookingAPI
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddCors();
             services.AddControllers();
             // services.AddSwaggerGen(c =>
             // {
@@ -43,11 +44,18 @@ namespace HackneyBookingAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseRouting();
 
-            app.UseCors(options =>
-            options.WithOrigins("http://localhost:3000")
-            .AllowAnyMethod()
-            .AllowAnyHeader());
+            // global cors policy
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
+            // app.UseCors(options =>
+            // options.WithOrigins("http://localhost:3000")
+            // .AllowAnyMethod()
+            // .AllowAnyHeader());
 
             // if (env.IsDevelopment())
             // {
@@ -56,8 +64,7 @@ namespace HackneyBookingAPI
             //     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RestaurantAPI v1"));
             // }
 
-            app.UseRouting();
-
+            
             //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

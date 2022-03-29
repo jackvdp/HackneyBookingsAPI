@@ -13,7 +13,7 @@ public class BookingController : ControllerBase
     {
     }
 
-    [EnableCors]
+    // [EnableCors]
     [HttpGet]
     public ActionResult<List<Booking>> GetAll() =>
         BookingService.GetAll();
