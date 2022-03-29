@@ -13,8 +13,10 @@ public class BookingController : ControllerBase
     {
     }
 
-    // [EnableCors]
     [HttpGet]
-    public ActionResult<List<Booking>> GetAll() =>
-        BookingService.GetAll();
+    public ActionResult<List<Booking>> GetAll() {
+        Console.WriteLine("Booking***************************");
+        return BookingService.GetAll();
+    }
+        
 }

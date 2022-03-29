@@ -21,6 +21,7 @@ namespace HackneyBookingAPI
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            Console.WriteLine("Hello***************************");
         }
 
         public IConfiguration Configuration { get; }
