@@ -4,7 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HackneyBookingAPI.Models.Booking;
+using HackneyBookingAPI.Models.Location;
+
+namespace HackneyBookingAPI.Models.BookingNS;
  public class Booking
  {
     public int Id { get; set; }
@@ -15,7 +17,7 @@ namespace HackneyBookingAPI.Models.Booking;
 
     public string? Email { get; set; }
 
-    public string? Location { get; set; }
+    public LocationPlace? LocationName { get; set; }
 
     public DateTime? Date { get; set; }
 

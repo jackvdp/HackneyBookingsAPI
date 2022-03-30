@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using HackneyBookingsAPI.Services;
-using HackneyBookingAPI.Models.Booking;
-using Microsoft.AspNetCore.Cors;
+using HackneyBookingAPI.Models.BookingNS;
 
 namespace HackneyBookingAPI.Controllers;
 

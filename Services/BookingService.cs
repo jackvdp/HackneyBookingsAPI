@@ -1,4 +1,5 @@
-using HackneyBookingAPI.Models.Booking;
+using HackneyBookingAPI.Models.BookingNS;
+using HackneyBookingAPI.Models.Location;
 
 namespace HackneyBookingsAPI.Services;
 
@@ -15,7 +16,7 @@ public static class BookingService
                 FirstName = "Jane", 
                 LastName = "Doe" , 
                 Email = "jane.doe@madetech.com", 
-                Location = "Hackney Marshes", 
+                LocationName = new LocationPlace(1, "Marshes"), 
                 Date = new DateTime(2022, 3, 30, 8, 30, 0), 
                 PaymentReceived = true  
             },
@@ -25,7 +26,7 @@ public static class BookingService
                 FirstName = "Joe", 
                 LastName = "Doe" , 
                 Email = "joe.doe@madetech.com", 
-                Location = "Hackney Marshes", 
+                LocationName = new LocationPlace(1, "Marshes"), 
                 Date = new DateTime(2022, 3, 30, 10, 30, 0),  
                 PaymentReceived = true  
             },
@@ -40,6 +41,8 @@ public static class BookingService
     {
         booking.Id = nextId++;
         Bookings.Add(booking);
+
+        
     }
 
     public static void Delete(int id)
