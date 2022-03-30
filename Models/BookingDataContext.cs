@@ -11,6 +11,7 @@ public class BookingDataContext: DbContext {
 
     protected override void OnModelCreating(ModelBuilder modelbuilder) {
         modelbuilder.UseSerialColumns();
+        
     }
 
     public DbSet<Booking> Bookings { get; set;}
