@@ -7,7 +7,6 @@ namespace HackneyBookingAPI.Models.BookingDataContextNS;
 public class BookingDataContext: DbContext {
 
     public BookingDataContext(DbContextOptions<BookingDataContext> options): base(options) {
-
     }
 
     protected override void OnModelCreating(ModelBuilder modelbuilder) {
