@@ -25,7 +25,7 @@ namespace HackneyBookingsAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Location>>> GetLocations(int id)
         {
-            
+
             return await _context.Locations.Where(x => x.CategoryId == id).ToListAsync();
         }
 

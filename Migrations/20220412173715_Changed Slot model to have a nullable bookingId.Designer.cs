@@ -3,6 +3,7 @@ using System;
 using HackneyBookingAPI.Models.BookingDataContextNS;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HackneyBookingsAPI.Migrations
 {
     [DbContext(typeof(BookingDataContext))]
-    partial class BookingDataContextModelSnapshot : ModelSnapshot
+    [Migration("20220412173715_Changed Slot model to have a nullable bookingId")]
+    partial class ChangedSlotmodeltohaveanullablebookingId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,6 +1,8 @@
 using HackneyBookingAPI.Models.BookingNS;
 using HackneyBookingAPI.Models.LocationNS;
 
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace HackneyBookingAPI.Models.SlotNS;
 
 public class Slot
@@ -19,9 +21,10 @@ public class Slot
 
     public virtual Location Location { get; set; }
 
-
-    public Nullable<int> BookingId { get; set; }
-
+    
+    public int? BookingId { get; set; }
+    
+    [ForeignKey("BookingId")]
     public virtual Booking Booking { get; set; }
 
 }

@@ -17,7 +17,6 @@ public class Booking
 
     public string BookingReference { get; set; }
 
-    [ForeignKey("SlotId")]
 
     public virtual Slot Slot { get; set; }
 
