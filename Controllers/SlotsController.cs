@@ -11,7 +11,7 @@ using HackneyBookingAPI.ViewModels.CreateSlotNS;
 
 namespace HackneyBookingsAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class SlotsController : ControllerBase
     {
@@ -22,14 +22,14 @@ namespace HackneyBookingsAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Slots
+        // GET: /Slots
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Slot>>> GetSlots(int id)
         {
             return await _context.Slots.Where(x => x.LocationId == id).ToListAsync();
         }
 
-        // GET: api/Slots/5
+        // GET: /Slots/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Slot>> GetSlot(int id)
         {
@@ -43,7 +43,7 @@ namespace HackneyBookingsAPI.Controllers
             return slot;
         }
 
-        // PUT: api/Slots/5
+        // PUT: /Slots/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSlot(int id, Slot slot)
@@ -74,7 +74,7 @@ namespace HackneyBookingsAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Slots
+        // POST: /Slots
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Slot>> PostSlot(CreateSlot createSlot)
@@ -97,7 +97,7 @@ namespace HackneyBookingsAPI.Controllers
             return Ok(slot);
         }
 
-        // DELETE: api/Slots/5
+        // DELETE: /Slots/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSlot(int id)
         {
