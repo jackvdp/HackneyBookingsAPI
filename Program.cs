@@ -15,7 +15,10 @@ builder.Services.AddCors(options =>
                                               "http://www.contoso.com",
                                               "http://localhost:3000",
                                               "https://hackney-booking-react.herokuapp.com"
-                                             );
+                                             )
+                                             .AllowAnyMethod()
+                                             .AllowAnyHeader()
+                                             .AllowAnyOrigin();
                       });
 });
 
