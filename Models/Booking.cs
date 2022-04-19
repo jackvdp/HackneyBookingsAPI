@@ -17,8 +17,8 @@ public class Booking
 
     public string BookingReference { get; set; }
 
-
     public virtual Slot Slot { get; set; }
 
     public virtual PaymentDetails PaymentDetails { get; set; }
+    
 }

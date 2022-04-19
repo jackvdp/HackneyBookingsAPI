@@ -1,5 +1,6 @@
 using HackneyBookingAPI.Models.BookingDataContextNS;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 
 var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -25,8 +26,9 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<BookingDataContext>(
   o => o.UseNpgsql(builder.Configuration.GetConnectionString("HackneyDb"))
 );
-
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
